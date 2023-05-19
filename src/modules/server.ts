@@ -25,28 +25,12 @@ const client = new tmi.Client({
   channels: [config.TWITCH_CHANNEL],
 })
 
-// const client = new tmi.Client({
-//   connection: {
-//     // The secure config is required if you're using tmi on the server.
-//     // Node doesn't handle automatically upgrading .dev domains to use TLS.
-//     secure: true,
-//     server: 'irc.fdgt.dev',
-//   },
-// })
-
 export default function startServer() {
-  client.connect().catch(function (error) {
-    // handle error
-    console.error(error)
-  })
+  client.connect().catch((error) => console.error(error))
 }
 
 client.on('connected', () => {
   console.log('connected')
-  //   client.say(
-  //     config.TWITCH_CHANNEL,
-  //     `Bot is connected as ${config.TWITCH_USERNAME}`
-  //   )
 })
 
 client.on('message', (channel, tags, message, self) => {
@@ -60,6 +44,7 @@ client.on('message', (channel, tags, message, self) => {
         reply(tags.id!, channel, responses.colour)
         break
       }
+
       case '!color': {
         if (separated[1] && separated[1] == 'list')
           return reply(tags.id!, channel, responses.list)
@@ -91,6 +76,7 @@ client.on('message', (channel, tags, message, self) => {
 
         break
       }
+
       case '!hype': {
         break
       }
