@@ -1,0 +1,32 @@
+{
+  "name": "huuge",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuval59/Huuge.git"
+  },
+  "keywords": [],
+  "author": "Yuval Maron",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yuval59/Huuge/issues"
+  },
+  "homepage": "https://github.com/yuval59/Huuge#readme",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "cue-sdk": "^4.0.0",
+    "dotenv": "^16.0.3",
+    "tmi.js": "^1.8.5",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
