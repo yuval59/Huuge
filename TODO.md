@@ -4,7 +4,7 @@
 
   Implement twitch logic
 
-- [ ] [Notion](src/modules/notion.ts)
+- [x] [Notion](src/modules/notion.ts)
 
   Implement Notion as database
 
