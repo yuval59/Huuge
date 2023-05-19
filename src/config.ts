@@ -2,7 +2,9 @@ import 'dotenv/config'
 import { z } from 'zod'
 
 const envVariables = z.object({
-  //   TWITCH_OAUTH_TOKEN: z.string(),
+  TWITCH_OAUTH_TOKEN: z.string(),
+  TWITCH_USERNAME: z.string(),
+  TWITCH_CHANNEL: z.string(),
 
   //   MAKER_KEY: z.string(),
   //   LIFX_KEY: z.string(),

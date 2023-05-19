@@ -10,6 +10,20 @@ export const colors = {
   white: 'ffffff',
   orange: 'ff8000',
 } as const
+export type KnownColor = keyof typeof colors
+
+export function isKnownColor(color: string): color is KnownColor {
+  if (colors[color as KnownColor]) return true
+  return false
+}
+
+export const commands = ['!color', '!colour', '!hype'] as const
+export type CommandType = (typeof commands)[number]
+
+export function isCommand(command: string): command is CommandType {
+  if (commands.includes(command as CommandType)) return true
+  return false
+}
 
 export const lightRules = {
   subscriptionTimeoutInDays: 5,
@@ -42,4 +56,13 @@ export const subscriptionTypes = {
   subscription: 'subscription',
   gift: 'gift',
   gifter: 'gifter',
+} as const
+
+export const responses = {
+  colour: 'No.',
+  list: `The known colors are [${Object.keys(colors).join(', ')}]`,
+  explainColor: `Use the command like so: "!color [hexRGB value]" or "!color [from color list]"`,
+  changeHex: (hex: string) => `Changing the light color to ${hex}`,
+  changeNamed: (color: KnownColor) =>
+    `Changing the light color to ${color} [ #${colors[color]} ]`,
 } as const

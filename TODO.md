@@ -1,6 +1,6 @@
 # TODO:
 
-- [ ] [Server](src/modules/server.ts)
+- [x] [Server](src/modules/server.ts)
 
   Implement twitch logic
 
